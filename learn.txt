@@ -1,0 +1,3 @@
+leanrn / make a programm
+
+- binary to hexidecimal (neg number is the binary flipped +1) [complement form]
