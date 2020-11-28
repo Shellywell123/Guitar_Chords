@@ -23,6 +23,9 @@ For Example "C" will produce:\
 
 
 ## map all notes
+```py
+map_neck()
+```
 
 ```
   ####################
@@ -54,6 +57,9 @@ For Example "C" will produce:\
 12 --------------------
 ```
 ## A minor pen
+```py
+map_neck(scale='A_minor_pen')
+```
 ```
 
   ####################
