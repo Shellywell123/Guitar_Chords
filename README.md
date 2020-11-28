@@ -58,7 +58,7 @@ map_neck()
     E  A  D  G  B  E
 12 --------------------
 ```
-## A minor pen
+## Minor Pentatonic Scales
 ```py
 map_neck(scale='A_minor_pen')
 ```
