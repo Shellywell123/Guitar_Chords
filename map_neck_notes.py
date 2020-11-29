@@ -1,3 +1,4 @@
+from colours import *
 
 notes = ['A ','A#','B ','C ','C#','D ','D#','E ','F ','F#','G ','G#']
 
@@ -26,11 +27,6 @@ d_min_blues = ['D ', 'G ', 'C ', 'F ', 'A ', 'G#']
 e_min_blues = ['E ', 'A ', 'D ', 'G ', 'B ', 'A#']
 f_min_blues = ['F ', 'A#', 'D#', 'G#', 'C ', 'B ']
 g_min_blues = ['G ', 'C ', 'F ', 'A#', 'D ', 'C#']
-
-#guitar setup
-
-open_strings = ['E ','A ','D ','G ','B ','E ']
-num_of_frets = 12
 
 def print_fret_notes(fret_notes,scale=None):
     """
@@ -74,20 +70,121 @@ def print_fret_notes(fret_notes,scale=None):
             if fret_notes[string_num] not in scale_notes:
                 fret_notes[string_num] = '  '
 
+    #string colouring
+    for string_num in range(0,len(fret_notes)):
+
+        if string_num == 0:
+            fret_notes[string_num] = red_back_k+fret_notes[string_num]+white
+        if string_num == 1:
+            fret_notes[string_num] = yellow_back_k+fret_notes[string_num]+white        
+        if string_num == 2:
+            fret_notes[string_num] = green_back_k+fret_notes[string_num]+white        
+        if string_num == 3:
+            fret_notes[string_num] = blue_back_k+fret_notes[string_num]+white        
+        if string_num == 4:
+            fret_notes[string_num] = purp_back_k+fret_notes[string_num]+white
+        if string_num == 5:
+            fret_notes[string_num] = turq_back_k+fret_notes[string_num]+white
+
     string1,string2,string3,string4,string5,string6 = fret_notes
 
-    print('    {} {} {} {} {} {}'.format(string1,string2,string3,string4,string5,string6))
+    print('    |{} {} {} {} {} {}|'.format(string1,string2,string3,string4,string5,string6))
 
-def map_neck(scale=None):
+def print_guitar_head():
     """
     """
-    neck_width = 20
-    print(' ','#'*neck_width)
+
+    a = red_back_k+'  '+white
+    b = yellow_back_k+'  '+white        
+    c = green_back_k+'  '+white        
+    d = blue_back_k+'  '+white        
+    e = purp_back_k+'  '+white
+    f = turq_back_k+'  '+white
+
+    ao = red_back+'O '+white
+    bo = yellow_back+'O '+white        
+    co = green_back+'O '+white        
+    do = blue_back+'O '+white        
+    eo = purp_back+'O '+white
+    fo = turq_back+'O '+white
+
+    ao2 = red_back+' O'+white
+    bo2 = yellow_back+' O'+white        
+    co2 = green_back+' O'+white        
+    do2 = blue_back+' O'+white        
+    eo2 = purp_back+' O'+white
+    fo2 = turq_back+' O'+white
+
+    t = white_back_k+' '+white
+
+    tag = red+'Shellywell123'+white
+
+    head= """
+      _______________    
+     /               \\ 
+    /  /~~~~~~~~~~~\\  \\
+   /  ({})  \\
+  |    \\~~~~~~~~~~~/    |
+{}=|=={}             {}==|={}
+  |  {}             {}  |
+  |   {}           {}   |
+{}=|=={} {}       {} {}==|={}
+  |  {}   {}   {}   {}  |
+  |    {}  {} {}  {}    |
+{}=|=={} {} {} {} {} {}==|={}
+  |  {} {} {} {} {} {}  |
+   \\ {}_{}_{}_{}_{}_{} / """.format(tag,t,co,do2,t,c,d,c,d,t,bo,c,d,eo2,t,b,c,d,e,b,c,d,e,t,ao,b,c,d,e,fo2,t,a,b,c,d,e,f,a,b,c,d,e,f,a,b,c,d,e,f)
+    print(head)
+
+def print_guitar_body():
+    """
+    """
+
+    body="""
+-------------------------------------------------------
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|                                                     |
+|_____________________________________________________|
+"""
+    print(body)
+
+def map_neck(scale=None,num_of_frets=12,tuning=['E ','A ','D ','G ','B ','E ']):
+    """
+    """
+    print('Configuration:\n- tuning       = {}\n- num_of_frets = {}\n- scale        = {}'.format(tuning,num_of_frets,scale))
+    print_guitar_head()
+    neck_width = 17
+    #print('   ',white_back_k,'#'*neck_width,white)
     for fret_num in range(0,num_of_frets+1):
 
         fret_notes = []
         
-        for string in open_strings:
+        for string in tuning:
             open_index = notes.index(string)
           #  note_index = open_index+fret_num
             note_index = open_index + (fret_num % len(notes))
@@ -97,6 +194,15 @@ def map_neck(scale=None):
             fret_notes.append(notes[note_index])
 
         print_fret_notes(fret_notes,scale=scale)
-        print(fret_num,'-'*neck_width)
+        #print(fret_num,'-'*neck_width)
 
-map_neck(scale='C_Phrygian')
+        colored_fret = ' -{}--{}-{}--{}-{}--{}-{}--{}-{}--{}-{}--{}-'.format(red_back,white,yellow_back,white,green_back,white,blue_back,white,purp_back,white,turq_back,white)
+      
+        if fret_num==0:
+            colored_fret=' |'+white_back_k+'#'*neck_width+white+'|'
+        if fret_num<=9:
+            fret_num = ' '+str(fret_num)
+        print(fret_num,colored_fret)
+ #   print_guitar_body()
+
+map_neck(scale='A_minor_pen')
