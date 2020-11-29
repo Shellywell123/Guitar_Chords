@@ -62,7 +62,9 @@ map_neck()
 ```py
 map_neck(scale='A_minor_pen')
 ```
-![](https://github.com/Shellywell123/Guitar_Chords/blob/main/screenshot.png)
+
+![](https://github.com/Shellywell123/Guitar_Chords/blob/master/screenshot.png)
+
 ## Minor Blues Scales
 ```py
 map_neck(scale='G_minor_blues')
