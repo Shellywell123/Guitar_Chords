@@ -9,9 +9,11 @@ e_min_pen = ['E ', 'A ', 'D ', 'G ', 'B ']
 f_min_pen = ['F ', 'A#', 'D#', 'G#', 'C ']
 g_min_pen = ['G ', 'C ', 'F ', 'A#', 'D ']
 
+c_phrygi = ['C ', 'C#', 'E ', 'F ', 'G ', 'G#', 'A#', 'C ']
+g_min_blues = ['G ', 'C ', 'F ', 'A#', 'D ', 'C#']
+
 open_strings = ['E ','A ','D ','G ','B ','E ']
 num_of_frets = 12
-
 
 def print_fret_notes(fret_notes,scale=None):
     """
@@ -52,6 +54,16 @@ def print_fret_notes(fret_notes,scale=None):
             if fret_notes[string_num] not in g_min_pen:
                 fret_notes[string_num] = '  '
 
+    if scale == 'G_minor_blues':
+        for string_num in range(0,len(fret_notes)):
+            if fret_notes[string_num] not in g_min_blues:
+                fret_notes[string_num] = '  '
+
+    if scale == 'C_Phrygian':
+        for string_num in range(0,len(fret_notes)):
+            if fret_notes[string_num] not in c_phrygi:
+                fret_notes[string_num] = '  '
+
     string1,string2,string3,string4,string5,string6 = fret_notes
 
     print('    {} {} {} {} {} {}'.format(string1,string2,string3,string4,string5,string6))
@@ -77,4 +89,4 @@ def map_neck(scale=None):
         print_fret_notes(fret_notes,scale=scale)
         print(fret_num,'-'*neck_width)
 
-map_neck(scale='B_minor_pen')
+map_neck(scale='G_minor_blues')
