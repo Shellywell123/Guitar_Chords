@@ -9,7 +9,14 @@ e_min_pen = ['E ', 'A ', 'D ', 'G ', 'B ']
 f_min_pen = ['F ', 'A#', 'D#', 'G#', 'C ']
 g_min_pen = ['G ', 'C ', 'F ', 'A#', 'D ']
 
-c_phrygi = ['C ', 'C#', 'E ', 'F ', 'G ', 'G#', 'A#', 'C ']
+c_phrygi = ['C ', 'C#', 'E ', 'F ', 'G ', 'G#', 'A#']
+
+a_min_blues = ['A ', 'D ', 'G ', 'C ', 'E ', 'D#']
+b_min_blues = ['B ', 'E ', 'A ', 'D ', 'F#', 'F ']
+c_min_blues = ['C ', 'F ', 'A#', 'D#', 'G ', 'F#']
+d_min_blues = ['D ', 'G ', 'C ', 'F ', 'A ', 'G#']
+e_min_blues = ['E ', 'A ', 'D ', 'G ', 'B ', 'A#']
+f_min_blues = ['F ', 'A#', 'D#', 'G#', 'C ', 'B ']
 g_min_blues = ['G ', 'C ', 'F ', 'A#', 'D ', 'C#']
 
 open_strings = ['E ','A ','D ','G ','B ','E ']
@@ -89,4 +96,4 @@ def map_neck(scale=None):
         print_fret_notes(fret_notes,scale=scale)
         print(fret_num,'-'*neck_width)
 
-map_neck(scale='G_minor_blues')
+map_neck(scale=None)
