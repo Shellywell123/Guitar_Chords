@@ -15,6 +15,15 @@ plot all notes:
 map_neck()
 ```
 
+plot a scale from list below:
+ - phrygian
+ - minor pentatonic
+ - minor blues
+ 
+```py
+map_neck(scale='A_minor_pen')
+```
+
 set tuning (requires spaces):
 ```py
 map_neck(tuning=['E ','A ','D ','G ','B ','E '])
